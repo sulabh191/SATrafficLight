@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
+        //Conforming to Delegates
+        trafficLightView.delegate = self
         trafficLight.delegate = self
         //--Starting Traffic Light From Here--
         trafficLight.startTrafficLight()
@@ -31,6 +33,8 @@ class ViewController: UIViewController {
 
 }
 
+
+// Define SATrafficLightProtocol Functions here
 extension ViewController : SATrafficLightProtocol {
     
     func trafficLightChangeToState(state: trafficLightTime) {
@@ -38,5 +42,18 @@ extension ViewController : SATrafficLightProtocol {
         trafficLightView.changeLightForState(state: state)
     }
 
+}
+
+// Define SATrafficLightViewProtocol Functions here
+extension ViewController : SATrafficLightViewProtocol {
+    
+    func stopButtonPressed(_ sender: UIButton) {
+        trafficLight.stopTrafficLight()
+    }
+    
+    func resetButtonPressed(_ sender: UIButton) {
+        
+        trafficLight.resetTrafficLight()
+    }
 }
 

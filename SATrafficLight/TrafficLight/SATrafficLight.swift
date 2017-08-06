@@ -37,7 +37,7 @@ class SATrafficLight : NSObject {
     //Mark: Instance functions
     
     /**
-     -description : Call Timer on TrafficLightTime Enums and store current Traffic Light State into var "currentTrafficState"
+     -description: Call Timer on TrafficLightTime Enums and store current Traffic Light State into var "currentTrafficState"
      
      -paramater: trafficLightTime (with default state red for entry point)
      **/
@@ -68,5 +68,25 @@ class SATrafficLight : NSObject {
         delegate?.trafficLightChangeToState(state: nextTrafficState)
         //invoke timer for updated trafficState enum
         startTrafficLight(time: nextTrafficState)
+    }
+    
+    
+    /**
+     - description : function restarts Traffic Light with default state(i.e Red)
+     
+     **/
+    func resetTrafficLight() {
+        
+        timer?.invalidateTimer()
+        startTrafficLight()
+        delegate?.trafficLightChangeToState(state: currentTrafficState)
+    }
+    
+    /**
+     - description : function stops Traffic Light at current state.
+     **/
+    func stopTrafficLight() {
+        
+        timer?.invalidateTimer()
     }
 }

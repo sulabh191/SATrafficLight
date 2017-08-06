@@ -14,7 +14,7 @@ class RepeatingTimerManager: NSObject {
     
     var target:NSObject!
     var selectorToRun: Selector!
-    var timer:Timer!
+    var timer:Timer?
     
     init(target: NSObject, selector: Selector, frequency: TimeInterval) {
         super.init()
@@ -26,7 +26,7 @@ class RepeatingTimerManager: NSObject {
     
     
     func invalidateTimer() {
-        timer.invalidate()
+        timer?.invalidate()
         self.timer = nil
         self.target = nil
         self.selectorToRun = nil

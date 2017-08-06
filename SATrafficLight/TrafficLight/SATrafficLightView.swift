@@ -8,15 +8,32 @@
 
 import UIKit
 
+protocol SATrafficLightViewProtocol : class {
+    
+    func stopButtonPressed(_ sender: UIButton)
+    func resetButtonPressed(_ sender: UIButton)
+}
+
+//Extending Protocol with Empty Definition to make as Optional Protocol
+extension SATrafficLightProtocol {
+    
+    func stopButtonPressed(_ sender: UIButton) {}
+    func resetButtonPressed(_ sender: UIButton) {}
+}
+
+
 class SATrafficLightView: UIView {
 
+    //MARK: IBOutlet's declaration
     @IBOutlet var contentView: UIView!
 
     @IBOutlet weak var redLight: UIView!
     @IBOutlet weak var yellowLight: UIView!
     @IBOutlet weak var greenLight: UIView!
+    //MARK: Vars declaration
+    weak var delegate : SATrafficLightViewProtocol?
     
-    
+    //MARK:Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -42,6 +59,7 @@ class SATrafficLightView: UIView {
         
     }
     
+    //MARK: Instance functions
     func defaultTrafficLightState() {
         redLight.alpha = 1.0
         yellowLight.alpha = 0.5
@@ -63,5 +81,13 @@ class SATrafficLightView: UIView {
             yellowLight.alpha = 0.5
             greenLight.alpha = 1.0
         }
+    }
+    
+    @IBAction func stopButtonAction(_ sender: UIButton) {
+        delegate?.stopButtonPressed(sender)
+    }
+    
+    @IBAction func resetButtonAction(_ sender: UIButton) {
+        delegate?.resetButtonPressed(sender)
     }
 }

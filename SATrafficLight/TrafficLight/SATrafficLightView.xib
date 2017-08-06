@@ -19,7 +19,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="177" height="296"/>
+            <rect key="frame" x="0.0" y="0.0" width="177" height="350"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traffic Light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z7-rU-GWg">
@@ -52,20 +52,50 @@
                         <constraint firstAttribute="width" constant="50" id="vPw-zR-CqM"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIS-80-OMu">
+                    <rect key="frame" x="115" y="300" width="46" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="SWm-5y-TkD"/>
+                        <constraint firstAttribute="width" constant="46" id="eeA-1Y-LVe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="15"/>
+                    <state key="normal" title="Reset"/>
+                    <connections>
+                        <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="dFN-6C-ii2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUq-K6-Y80">
+                    <rect key="frame" x="16" y="300" width="46" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="C9b-oT-QJx"/>
+                        <constraint firstAttribute="height" constant="30" id="xVk-OV-H20"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="15"/>
+                    <state key="normal" title="Stop"/>
+                    <connections>
+                        <action selector="stopButtonAction:" destination="-1" eventType="touchUpInside" id="p3c-lh-UAc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.63801261736589487" green="0.43163228959854494" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="GIS-80-OMu" secondAttribute="trailing" constant="16" id="5bL-YK-X3v"/>
+                <constraint firstAttribute="bottom" secondItem="nUq-K6-Y80" secondAttribute="bottom" constant="20" id="8h2-TI-DQB"/>
                 <constraint firstItem="tbv-0V-KG3" firstAttribute="top" secondItem="2Z7-rU-GWg" secondAttribute="bottom" constant="18" id="8hJ-st-bTJ"/>
                 <constraint firstItem="uyx-2M-cVf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LcE-g2-GoW"/>
                 <constraint firstItem="1uO-KV-aJh" firstAttribute="top" secondItem="tbv-0V-KG3" secondAttribute="bottom" constant="18" id="SIc-gu-6xd"/>
                 <constraint firstItem="2Z7-rU-GWg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YmT-Qz-x5C"/>
                 <constraint firstItem="uyx-2M-cVf" firstAttribute="top" secondItem="1uO-KV-aJh" secondAttribute="bottom" constant="18" id="cbP-Eu-SrO"/>
                 <constraint firstItem="1uO-KV-aJh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="d8B-0l-MKl"/>
+                <constraint firstAttribute="bottom" secondItem="GIS-80-OMu" secondAttribute="bottom" constant="20" id="ipf-ca-x7e"/>
                 <constraint firstItem="2Z7-rU-GWg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="iqq-7h-t1e"/>
+                <constraint firstItem="nUq-K6-Y80" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="p2Y-eu-Rhv"/>
                 <constraint firstItem="tbv-0V-KG3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sli-YY-u2D"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-17" y="-331"/>
+            <point key="canvasLocation" x="-17.5" y="-304"/>
         </view>
     </objects>
 </document>
