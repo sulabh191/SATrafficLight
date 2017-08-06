@@ -24,7 +24,7 @@ enum trafficLightTime : TimeInterval {
 * example Usage  is written into ViewController
 
 
-
+![alt text](https://s1.postimg.org/a78s3df9r/Traffic_Light.png)
 
 
 
