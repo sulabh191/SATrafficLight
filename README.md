@@ -1,5 +1,6 @@
-# SATrafficLight
-TrafficLight with Red,Yellow,Green Light Similar to trafficLights on Roads.
+# SATrafficLight -
+* Language Used - swift 3.0
+* TrafficLight with Red,Yellow,Green Light Similar to trafficLights on Roads.
 
 Contain Module - TrafficLight
 * i)Model Class -> SATrafficLight 
